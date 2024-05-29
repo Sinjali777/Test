@@ -1,0 +1,452 @@
+\documentclass{report}
+\usepackage{times} % Required for inserting images
+\usepackage{lipsum}
+\usepackage{emoji}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{{graphicx}}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage[rightcaption]{sidecap}
+\graphicspath{{./images/}} 
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\labelenumi}{\arabic{enumi}.\arabic{enumi}}
+\renewcommand{\labelenumiii}
+{\arabic{enumi}.arabic{enumi}.\arabic{enumiii}}
+\begin{document}
+
+\tableofcontents
+\addcontentsline{toc}{section}{Name}
+
+\chapter{INTRODUCTION}
+%unnumbered section
+\section*{Background}
+\lipsum[1-2]
+\section{motivation}
+\lipsum[1-2]
+\begin{itemize}
+    \item item no 1
+    \item item no 2
+    \begin{enumerate}
+        \item subitem 1
+        \item subitem 2
+    \end{enumerate}
+\end{itemize}
+\begin{enumerate}
+\item one
+    \item item no a
+    \item item no b
+    \item[!] item no c
+    \item[0] emoji
+\end{enumerate}
+\begin{description}
+    \item[hello, my name is sugam:] item no 1
+    \item[b.] item no 2
+\end{description}
+    
+\chapter{LITERATURE REVIEW}
+\lipsum[1-2]
+%New chapter
+\section{Preview}
+\lipsum[1-2]
+    \par
+    Table :
+
+\begin{center}
+    \begin{tabular}
+    {|r|r|r|}
+    \hline
+        cell1 & cell2 & cell3 \\
+        \hline
+        cell4 & cell 5 & cell 6\\
+        \hline
+        cell7 & cell8 & cell 9 \\
+    \hline
+    \end{tabular}
+\end{center}
+\subsection{Subsection}
+\lipsum[1-2]
+\subsection{All about Tables}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+        \textbf{Fruit} & \textbf{Color} & \textbf{Average Weight(g)} \\
+        \hline
+        Apple & Red & 182 \\
+        \hline
+        Banana & Yellow & 118 \\
+        \hline
+        Cherry & Red & 8 \\
+        \hline
+        Orange & Orange & 131 \\
+        \hline
+        Grape & Purple & 5 \\
+        \hline
+    \end{tabular}
+\end{center}
+\begin{center}
+    \begin{tabular}{|m{5em}|m{1cm}|m{1cm}|}
+        \hline
+        cell 1 & cell 2 & THis is for overflow \\
+        \hline
+        cell 1 & cell 2 & cell 3 \\
+       \hline
+       cell 1 & cell 2 & cell 3 \\
+       \hline
+    \end{tabular}
+\end{center}
+
+
+\begin{center}
+    \begin{tabularx}{0.8\textwidth}{
+        | >{\raggedright\arraybackslash}X
+        | >{\centering\arraybackslash}X
+        | >{\raggedleft\arraybackslash}X|}    
+        \hline
+        item 1 & item 2 & item 3 \\
+        \hline
+        item 1 & item 2 & item 3 \\
+        \hline
+        item 1 & item 2 & item 3 \\
+        \hline
+    \end{tabularx}   
+\end{center}
+
+\begin{center}
+
+\end{center}
+    \begin{tabular}{|c|c|c|c|}
+       \hline
+       \multicolumn{4}{|c|}{Cell combine } \\
+       \hline
+        col 1 & col2 & col3 & col4  \\
+       \hline
+       \multirow{3}{*}{Multi row} & cell 2& cell 0 & cell 3 \\
+       \cline{2-4}
+       & cell 4 & cell 5 & cell 6 \\
+       \cline{2-4}
+       & cell 7 & cell 8 & cell 9 \\
+       \hline
+    \end{tabular}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+         \hline
+         \multirow{2}{*}{\textbf{Fruit}} & \multicolumn{3}{|c|}{\textbf{Sales(kg) }} \\
+         \cline{2-4}
+         & \textbf{North} & \textbf{South} & \textbf{Total} \\
+         \hline
+         Apple & 150 & 200 & 350  \\
+         \hline
+        \multirow{2}{*}{Banana} & 100 & 120 & \multirow{2}{*}{250} \\
+        \cline{2-3}
+        & 60 & 80 & \\
+        \hline
+        Cherry & 90 & 110 & 200 \\
+        \hline
+        Orange & 200 & 220 & 420 \\
+        \hline
+        \multirow{2}{*}{Grape} & 75 & 85 & \multirow{2}{*}{160} \\
+        \cline{2-3}
+        & 40 & 45 & \\
+        \hline
+        \end{tabular}
+\end{center}    
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+        \multirow{2}{*}{\textbf{Fruit}} & \multirow{2}{*}{\textbf{Region}} & \multicolumn{2}{|c|}{Quarter} & Total Sales(kg) \\
+        \cline{3-4}
+         & & Q1 & Q2 & \\
+         \hline
+         \multirow{3}{*}{Apple} & North & 150 & 150 & \multirow{3}{*}{510} \\
+         \cline{2-4}
+         & South & 120 & 130 & \\
+         \cline{2-4}
+         & East & 70 & 60 & \\
+         \hline
+         \multirow{3}{*}{Banana} & North & 200 & 220 & \multirow{3}{*}{620} \\
+         \cline{2-4}
+         & South & 180 & 160 & \\
+         \cline{2-4}
+         & East & 20 & 60 & \\
+         \hline
+         \multirow{3}{*}{Cherry} & North & 100 & 90 & \multirow{3}{*}{270} \\
+         \cline{2-4}
+         & South & 80 & 50 & \\
+         \cline{2-4}
+         & East & 40 & 30 & \\
+         \hline
+    \end{tabular}
+\end{center}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/uffy.jpg}
+    \caption{GOAT}
+    \label{fig:enter-label}
+\end{figure}
+\begin{longtable}[c]{| c | c |}
+\caption{Long table caption.\label{long}}\\
+ \hline
+ \multicolumn{2}{| c |}{Begin of Table}\\
+ \hline
+ Something & something else\\
+ \hline
+ \endfirsthead
+ 
+ \hline
+ \multicolumn{2}{|c|}{Continuation of Table \ref{long}}\\
+ \hline
+ Something & something else\\
+ \hline
+ \endhead
+ 
+ \hline
+ \endfoot
+ 
+ \hline
+ \multicolumn{2}{| c |}{End of Table}\\
+ \hline\hline
+ \endlastfoot
+ 
+Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ Lots of lines & like this\\
+ \end{longtable}
+\listoftables
+\vspace{10 pt}
+Table \ref{tab:my_label} is an example of a reference
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        col1 & col2 & col3  \\
+        \hline
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9 \\
+        \hline
+    \end{tabular}
+    \caption{Reference Table}
+    \label{tab:my_label}
+\end{table}
+\subsubsection{\large Subsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+% images
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lipsum[1-2]
+\includegraphics[width=0.6\textwidth]{one_piece}
+\includegraphics[width=0.8 \textwidth]{luffy} \\
+\includegraphics[width=0.8\textwidth, height = 10cm , angle= 180]{luffytaro}
+\lipsum[1-2]
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering  
+    \includegraphics[width=0.25\textwidth]{images/luffy.jpg}
+\end{wrapfigure}
+\lipsum[1-2]
+\begin{figure}[b] %bottom
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/team.jpg}
+    \caption{caption}
+    \label{fig:enter-label}
+\end{figure}
+\lipsum[1-2]
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+       \includegraphics[width=0.8\textwidth]{images/luffy.jpg}
+    \caption{Caption}
+    \label{fig:enter-label} 
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\textwidth}
+        \includegraphics[width=0.8\textwidth]{images/uffy.jpg}
+        \label{fig:first}
+        \caption{first sub figure }
+    \end{subfigure}
+\caption{Creating subfigure in \LaTeX}
+\label{fig:figures}
+\end{figure}
+\begin{SCfigure}[0.5][h]
+    \caption{The picture of the temple, This caption will be on the right}
+    \includegraphics[width=0.6 \textwidth]{images/zoro.jpg}
+\end{SCfigure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6 \textwidth]{images/zoro.jpg}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+\lipsum[1-2]
+\end{document}
